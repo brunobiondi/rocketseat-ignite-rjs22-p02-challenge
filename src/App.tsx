@@ -1,7 +1,13 @@
+import { GlobalStyles } from '@/layout/GlobalStyles'
+import { theme } from '@/layout/theme'
+import { ThemeProvider } from 'styled-components'
+import { Header } from './components/Header'
+
 export function App() {
   return (
-    <>
-      <h1>App</h1>
-    </>
+    <ThemeProvider theme={theme}>
+      <Header />
+      <GlobalStyles />
+    </ThemeProvider>
   )
 }
