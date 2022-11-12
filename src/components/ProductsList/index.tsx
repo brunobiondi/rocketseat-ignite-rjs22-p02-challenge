@@ -1,4 +1,4 @@
-import { ProductsContext } from '@/contexts/ProductsContext'
+import { ProductsContext } from '@/contexts/Products/ProductsContext'
 import { useContext } from 'react'
 import { ProductCard } from './components/ProductCard'
 import { Container, List, Title } from './styled'
