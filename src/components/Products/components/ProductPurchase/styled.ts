@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 0.5rem;
 
@@ -27,15 +27,18 @@ export const Amount = styled.div`
   border-radius: 0.375rem;
   color: ${({ theme }) => theme.colors.base.title};
   font-size: 0.875rem;
-  padding: 0.25rem;
 
   display: flex;
-  align-items: center;
-  gap: 0.25rem;
+  align-items: stretch;
 
   a {
     border-radius: 0.375rem;
-    padding: 0.5rem;
+    padding: 0.375rem;
+    transition: all 0.5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background: ${({ theme }) => theme.colors.base.hover};
@@ -43,11 +46,25 @@ export const Amount = styled.div`
   }
 
   span {
-    height: 1.25rem;
-    width: 1.25rem;
+    width: 1rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+`
+
+export const AddCart = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${({ theme }) => theme.colors.brand.purpleDark};
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  transition: all 0.5s;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.brand.purple};
   }
 `

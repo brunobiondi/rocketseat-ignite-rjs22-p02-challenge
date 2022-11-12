@@ -1,5 +1,6 @@
-import { Amount, Container, Price } from './styled'
+import { AddCart, Amount, Container, Price } from './styled'
 
+import svgCartWhite from '@/assets/cart-white.svg'
 import svgMinus from '@/assets/minus.svg'
 import svgMore from '@/assets/more.svg'
 
@@ -19,6 +20,10 @@ export const ProductPurchase = () => {
           <img src={svgMore} alt="" />
         </a>
       </Amount>
+
+      <AddCart>
+        <img src={svgCartWhite} alt="" />
+      </AddCart>
     </Container>
   )
 }
