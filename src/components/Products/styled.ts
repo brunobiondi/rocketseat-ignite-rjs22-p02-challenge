@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 75rem;
-  padding: 2rem 2.5rem;
+  padding: 2rem 2.5rem 10rem;
 `
 
 export const Title = styled.h3`
