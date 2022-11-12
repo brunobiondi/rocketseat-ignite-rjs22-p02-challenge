@@ -2,7 +2,7 @@ import { GlobalStyles } from '@/layout/GlobalStyles'
 import { theme } from '@/layout/theme'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { ProductsContextProvider } from './contexts/ProductsContext'
+import { ProductsContextProvider } from './contexts/Products/ProductsContext'
 import { AppRoutes } from './routes'
 
 export function App() {
