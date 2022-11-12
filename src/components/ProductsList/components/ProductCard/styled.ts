@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-export const List = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2.5rem 2rem;
-`
-
 export const Item = styled.div`
   background: ${({ theme }) => theme.colors.base.card};
   border-radius: 0.375rem 2.25rem;
@@ -20,6 +14,13 @@ export const ProductInfo = styled.div`
 
 export const Image = styled.img`
   margin: -2.5rem auto 0.75rem;
+`
+
+export const TagsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 `
 
 export const Tag = styled.span`

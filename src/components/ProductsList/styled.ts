@@ -14,3 +14,9 @@ export const Title = styled.h3`
   line-height: 130%;
   margin-bottom: 3.375rem;
 `
+
+export const List = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2.5rem 2rem;
+`

@@ -4,7 +4,7 @@ import svgCartWhite from '@/assets/cart-white.svg'
 import svgMinus from '@/assets/minus.svg'
 import svgMore from '@/assets/more.svg'
 
-export const ProductPurchase = () => {
+export const CardPurchase = () => {
   return (
     <Container>
       <Price>
