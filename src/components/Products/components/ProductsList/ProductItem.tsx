@@ -1,3 +1,4 @@
+import { ProductPurchase } from '../ProductPurchase'
 import { Description, Image, Item, ProductInfo, Tag, Title } from './styled'
 
 export const ProductItem = () => {
@@ -11,6 +12,7 @@ export const ProductItem = () => {
           O tradicional café feito com água quente e grãos moídos
         </Description>
       </ProductInfo>
+      <ProductPurchase />
     </Item>
   )
 }
