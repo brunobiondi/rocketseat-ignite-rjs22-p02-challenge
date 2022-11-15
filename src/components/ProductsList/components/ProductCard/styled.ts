@@ -20,7 +20,7 @@ export const ProductInfo = styled.div`
 `
 
 export const Image = styled.img`
-  margin: -2.5rem auto 0.75rem;
+  margin: calc(-2.5rem + ${isInCartBorderWidth}) auto 0.75rem;
 `
 
 export const TagsContainer = styled.div`
