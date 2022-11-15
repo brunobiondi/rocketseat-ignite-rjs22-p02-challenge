@@ -4,13 +4,15 @@ interface ItemProps {
   isInCart?: boolean
 }
 
+const isInCartBorderWidth = '5px'
+
 export const Item = styled.div<ItemProps>`
-  background: ${(props) =>
-    props.isInCart
-      ? props.theme.colors.brand.purpleLight
-      : props.theme.colors.base.card};
+  background: ${({ theme }) => theme.colors.base.card};
+  border: 5px solid
+    ${({ isInCart, theme }) =>
+      isInCart ? theme.colors.base.hover : theme.colors.base.card};
   border-radius: 0.375rem 2.25rem;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem calc(1.5rem - ${isInCartBorderWidth});
   transition: all 0.5s;
 `
 
@@ -39,7 +41,7 @@ export const Tag = styled.span`
   font-size: 0.625rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem calc(0.5rem - ${isInCartBorderWidth});
   text-transform: uppercase;
 `
 

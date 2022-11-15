@@ -26,11 +26,8 @@ export const Price = styled.div`
   }
 `
 
-export const Amount = styled.div<IsInCartProps>`
-  background: ${(props) =>
-    props.isInCart
-      ? props.theme.colors.base.white
-      : props.theme.colors.base.button};
+export const Amount = styled.div`
+  background: ${({ theme }) => theme.colors.base.button};
   border-radius: 0.375rem;
   color: ${({ theme }) => theme.colors.base.title};
   font-size: 0.875rem;
@@ -61,21 +58,20 @@ export const Amount = styled.div<IsInCartProps>`
   }
 `
 
-export const AddCart = styled.a<IsInCartProps>`
+export const AddRemoveCart = styled.a<IsInCartProps>`
+  background: ${(props) =>
+    props.isInCart
+      ? props.theme.colors.base.button
+      : props.theme.colors.brand.purpleDark};
+  border-radius: 0.375rem;
+  height: 2.375rem;
+  padding: 0.5rem;
+  transition: all 0.5s;
+  width: 2.375rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: ${(props) =>
-    props.isInCart
-      ? props.theme.colors.base.white
-      : props.theme.colors.brand.purpleDark};
-  border-radius: 0.375rem;
-  padding: 0.5rem;
-  transition: all 0.5s;
-
-  width: 2.375rem;
-  height: 2.375rem;
 
   &:hover {
     background: ${(props) =>

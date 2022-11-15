@@ -1,7 +1,7 @@
 import { CartContext } from '@/contexts/Cart/CartContext'
 import { ProductModel } from '@/contexts/Products/ProductsModel'
 import { MouseEvent, useContext, useState } from 'react'
-import { AddCart, Amount, Container, Price } from './styled'
+import { AddRemoveCart, Amount, Container, Price } from './styled'
 
 import svgCartWhite from '@/assets/cart-white.svg'
 import svgMinus from '@/assets/minus.svg'
@@ -54,7 +54,7 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
         <span>R$</span> 9,90
       </Price>
 
-      <Amount isInCart={isInCart}>
+      <Amount>
         <a href="#" onClick={handleRemove}>
           <img src={svgMinus} alt="" />
         </a>
@@ -64,13 +64,13 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
         </a>
       </Amount>
 
-      <AddCart href="#" onClick={handleToggleToCart} isInCart={isInCart}>
+      <AddRemoveCart href="#" onClick={handleToggleToCart} isInCart={isInCart}>
         {isInCart ? (
           <img src={svgRemove} alt="" />
         ) : (
           <img src={svgCartWhite} alt="" />
         )}
-      </AddCart>
+      </AddRemoveCart>
     </Container>
   )
 }
