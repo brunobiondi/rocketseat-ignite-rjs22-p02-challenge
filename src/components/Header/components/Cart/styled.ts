@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const LinkCart = styled.a`
+export const LinkCart = styled(Link)`
   background: ${({ theme }) => theme.colors.brand.yellowLight};
   border-radius: 0.375rem;
   padding: 0.5rem;

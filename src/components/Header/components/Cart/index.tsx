@@ -3,7 +3,7 @@ import { LinkCart } from './styled'
 
 export const Cart = () => {
   return (
-    <LinkCart>
+    <LinkCart to="/checkout">
       <IconCart />
     </LinkCart>
   )
