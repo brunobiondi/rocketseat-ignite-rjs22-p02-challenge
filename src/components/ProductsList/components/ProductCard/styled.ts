@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-
-interface ItemProps {
-  isInCart?: boolean
-}
+import { IsInCartProps } from '../../IsInCartProps'
 
 const isInCartBorderWidth = '5px'
 
-export const Item = styled.div<ItemProps>`
+export const Item = styled.div<IsInCartProps>`
   background: ${({ theme }) => theme.colors.base.card};
   border: 5px solid
     ${({ isInCart, theme }) =>

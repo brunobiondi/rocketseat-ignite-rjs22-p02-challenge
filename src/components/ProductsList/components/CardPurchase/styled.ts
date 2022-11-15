@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-
-interface IsInCartProps {
-  isInCart?: boolean
-}
+import { IsInCartProps } from '../../IsInCartProps'
 
 export const Container = styled.div`
   display: flex;
