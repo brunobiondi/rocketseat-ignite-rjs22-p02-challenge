@@ -1,9 +1,17 @@
 import styled from 'styled-components'
 
-export const Item = styled.div`
-  background: ${({ theme }) => theme.colors.base.card};
+interface ItemProps {
+  isInCart?: boolean
+}
+
+export const Item = styled.div<ItemProps>`
+  background: ${(props) =>
+    props.isInCart
+      ? props.theme.colors.brand.purpleLight
+      : props.theme.colors.base.card};
   border-radius: 0.375rem 2.25rem;
   padding: 1.25rem 1.5rem;
+  transition: all 0.5s;
 `
 
 export const ProductInfo = styled.div`

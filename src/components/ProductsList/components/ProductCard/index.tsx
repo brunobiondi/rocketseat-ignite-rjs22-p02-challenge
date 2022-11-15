@@ -1,4 +1,6 @@
-import { ProductModel } from '@/contexts/ProductsModel'
+import { CartContext } from '@/contexts/Cart/CartContext'
+import { ProductModel } from '@/contexts/Products/ProductsModel'
+import { useContext } from 'react'
 import { CardPurchase } from '../CardPurchase'
 import {
   Description,
@@ -11,12 +13,16 @@ import {
 } from './styled'
 
 export const ProductCard = ({ product }: { product: ProductModel }) => {
+  const { cartState } = useContext(CartContext)
+
+  const isInCart = !!cartState.products.find((item) => item.id === product.id)
+
   return (
-    <Item>
+    <Item isInCart={isInCart}>
       <ProductInfo>
         <Image src={product.image} alt="" />
         <TagsContainer>
-          {product.tags.map((tag) => (
+          {product.tags.map((tag: string) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </TagsContainer>
@@ -24,7 +30,7 @@ export const ProductCard = ({ product }: { product: ProductModel }) => {
         <Description>{product.description}</Description>
       </ProductInfo>
 
-      <CardPurchase />
+      <CardPurchase product={product} />
     </Item>
   )
 }
