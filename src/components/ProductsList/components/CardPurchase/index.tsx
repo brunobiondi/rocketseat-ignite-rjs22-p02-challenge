@@ -21,10 +21,15 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
 
   const isInCart = !!cartState.products.find((item) => item.id === product.id)
 
+  const price = new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+  }).format(product.price)
+
   const handleAdd = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    setAmount(amount + 1)
-    isInCart && contextAddAmount(product)
+    const newAmount = amount + 1
+    setAmount(newAmount)
+    isInCart ? contextAddAmount(product) : contextAddProduct(product, newAmount)
   }
 
   const handleRemove = (e: MouseEvent<HTMLElement>) => {
@@ -35,7 +40,7 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
     }
 
     setAmount(amount - 1)
-    isInCart && contextRemoveAmount(product)
+    contextRemoveAmount(product)
   }
 
   const handleToggleToCart = (e: MouseEvent<HTMLElement>) => {
@@ -51,7 +56,7 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
   return (
     <Container>
       <Price>
-        <span>R$</span> 9,90
+        <span>R$</span> {price}
       </Price>
 
       <Amount>
