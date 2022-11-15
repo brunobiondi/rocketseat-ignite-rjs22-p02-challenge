@@ -17,9 +17,12 @@ export const CardPurchase = ({ product }: { product: ProductModel }) => {
     contextRemoveAmount,
   } = useContext(CartContext)
 
-  const [amount, setAmount] = useState(1)
+  const productInCart = cartState.products.find(
+    (item) => item.id === product.id,
+  )
+  const isInCart = !!productInCart
 
-  const isInCart = !!cartState.products.find((item) => item.id === product.id)
+  const [amount, setAmount] = useState(isInCart ? productInCart.amount : 1)
 
   const price = new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
