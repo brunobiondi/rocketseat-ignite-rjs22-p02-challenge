@@ -36,7 +36,7 @@ export const Input = styled.input<InputProps>`
   box-shadow: none;
   color: ${({ theme }) => theme.colors.base.text};
   font-size: 0.875rem;
-  padding: 0.75rem;
+  padding: 0.75rem 0.8125rem;
   width: ${(props) => props.width};
 
   &:focus,
