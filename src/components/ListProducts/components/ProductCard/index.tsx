@@ -1,6 +1,4 @@
-import { CartContext } from '@/contexts/Cart/CartContext'
-import { ProductModel } from '@/contexts/Products/ProductsModel'
-import { useContext } from 'react'
+import { ProductModel } from '@/contexts/Shop/ShopModel'
 import { CardPurchase } from '../CardPurchase'
 import {
   Description,
@@ -12,10 +10,12 @@ import {
   Title,
 } from './styled'
 
-export const ProductCard = ({ product }: { product: ProductModel }) => {
-  const { cartState } = useContext(CartContext)
+interface ProductCardProps {
+  product: ProductModel
+}
 
-  const isInCart = !!cartState.products.find((item) => item.id === product.id)
+export const ProductCard = ({ product }: ProductCardProps) => {
+  const isInCart = Boolean(product.amount)
 
   return (
     <Item isInCart={isInCart}>

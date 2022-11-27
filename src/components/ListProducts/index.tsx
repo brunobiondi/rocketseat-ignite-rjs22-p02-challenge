@@ -1,16 +1,17 @@
-import { ProductsContext } from '@/contexts/Products/ProductsContext'
+import { ShopContext } from '@/contexts/Shop/ShopContext'
 import { useContext } from 'react'
 import { ProductCard } from './components/ProductCard'
 import { Container, List, Title } from './styled'
 
-export const ProductsList = () => {
-  const products = useContext(ProductsContext)
+export const ListProducts = () => {
+  const { products } = useContext(ShopContext)
+  const listProducts = Object.values(products)
 
   return (
     <Container>
       <Title>Nossos cafés</Title>
       <List>
-        {products.map((product) => (
+        {listProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </List>

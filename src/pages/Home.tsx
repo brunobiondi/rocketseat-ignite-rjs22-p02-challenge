@@ -1,11 +1,11 @@
 import { Banner } from '@/components/Banner'
-import { ProductsList } from '@/components/ProductsList'
+import { ListProducts } from '@/components/ListProducts'
 
 export const Home = () => {
   return (
     <>
       <Banner />
-      <ProductsList />
+      <ListProducts />
     </>
   )
 }

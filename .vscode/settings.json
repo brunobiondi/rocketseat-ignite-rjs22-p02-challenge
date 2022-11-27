@@ -3,4 +3,5 @@
     "source.organizeImports",
     "source.fixAll.eslint",
   ],
+  "editor.tabSize": 2,
 }
