@@ -1,5 +1,6 @@
 import { createContext, PropsWithChildren, useReducer } from 'react'
-import products from './products.json'
+import { getCart } from './cartLocalStorage'
+import listProducts from './products.json'
 import * as actions from './reducer/actions'
 import { shopReducer } from './reducer/reducer'
 import { ShopContextModel, ShopModel } from './ShopModel'
@@ -8,12 +9,13 @@ export const ShopContext = createContext<ShopContextModel>(
   {} as ShopContextModel,
 )
 
-const initialState: ShopModel = {
-  cart: {},
-  products,
-}
-
 export const ShopContextProvider = ({ children }: PropsWithChildren) => {
+  const cartLocalStorage = getCart()
+  const initialState: ShopModel = {
+    cart: getCart(),
+    products: { ...listProducts, ...cartLocalStorage },
+  }
+
   const [{ cart, products }, dispatch] = useReducer(shopReducer, initialState)
 
   const cartAdd = (productKey: string, amount: number) => {

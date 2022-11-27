@@ -1,4 +1,5 @@
 import produce from 'immer'
+import { setCart as updateLocalStorage } from '../cartLocalStorage'
 import { ShopModel } from '../ShopModel'
 import { ActionModel, ActionTypes } from './ActionModel'
 
@@ -13,29 +14,32 @@ export const shopReducer = (state: ShopModel, action: ActionModel) => {
       return produce(state, (draft) => {
         draft.products[productKey].amount = amount as number
         draft.cart[productKey] = draft.products[productKey]
+        updateLocalStorage(draft.cart)
       })
 
     case ActionTypes.CART_REMOVE:
       return produce(state, (draft) => {
         draft.products[productKey].amount = 0
         delete draft.cart[productKey]
+        updateLocalStorage(draft.cart)
       })
 
     case ActionTypes.ONE_MORE:
       return produce(state, (draft) => {
         draft.products[productKey].amount++
         draft.cart[productKey] = draft.products[productKey]
+        updateLocalStorage(draft.cart)
       })
 
     case ActionTypes.ONE_LESS:
       return produce(state, (draft) => {
-        console.log('ActionTypes.ONE_LESS')
         draft.products[productKey].amount--
-        draft.cart[productKey] = draft.products[productKey]
 
-        if (draft.products[productKey].amount === 0) {
-          delete draft.cart[productKey]
-        }
+        draft.products[productKey].amount > 0
+          ? (draft.cart[productKey] = draft.products[productKey])
+          : delete draft.cart[productKey]
+
+        updateLocalStorage(draft.cart)
       })
 
     default:

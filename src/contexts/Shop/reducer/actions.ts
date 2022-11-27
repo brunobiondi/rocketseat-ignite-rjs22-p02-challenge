@@ -6,7 +6,7 @@ export const cartAdd = (productKey: string, amount = 1) => ({
 })
 
 export const cartRemove = (productKey: string) => ({
-  type: ActionTypes.CART_ADD,
+  type: ActionTypes.CART_REMOVE,
   payload: { productKey },
 })
 
