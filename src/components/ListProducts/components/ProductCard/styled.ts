@@ -38,7 +38,7 @@ export const Tag = styled.span`
   font-size: 0.625rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  padding: 0.25rem calc(0.5rem - ${isInCartBorderWidth});
+  padding: 0.25rem 0.5rem;
   text-transform: uppercase;
 `
 
