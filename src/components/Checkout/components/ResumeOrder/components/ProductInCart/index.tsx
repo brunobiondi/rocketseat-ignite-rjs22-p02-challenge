@@ -1,30 +1,35 @@
+import { ProductModel } from '@/contexts/Shop/ShopModel'
 import { ProductAmount } from '../ProductAmount'
 import { Container, Divider, Product, Title, TotalPrice } from './styled'
 
-import products from '@/contexts/Shop/products.json'
+interface ProductInCartProps {
+  product: ProductModel
+}
 
-export const ProductInCart = () => {
-  const product = Object.values(products)[0]
+export const ProductInCart = ({ product }: ProductInCartProps) => {
+  const { name, price, amount, image } = product
 
-  const price = new Intl.NumberFormat('pt-BR', {
+  const total = price * amount
+
+  const priceBrl = new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
     currency: 'BRL',
     style: 'currency',
-  }).format(product.price)
+  }).format(total)
 
   return (
     <>
       <Container>
         <img
-          src="/products/coffee-1.png"
+          src={image}
           alt="Coffee"
           style={{ width: '4rem', height: '4rem' }}
         />
         <Product>
-          <Title>Expresso Tradicional</Title>
+          <Title>{name}</Title>
           <ProductAmount product={product} />
         </Product>
-        <TotalPrice>{price}</TotalPrice>
+        <TotalPrice>{priceBrl}</TotalPrice>
       </Container>
       <Divider />
     </>
