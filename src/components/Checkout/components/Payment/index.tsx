@@ -1,4 +1,4 @@
-import { DeliveryInfoTitle } from '../DeliveryInfoTitle'
+import { BoxTitle } from '../BoxTitle'
 import { Container, PaymentMethod, PaymentMethods } from './styled'
 
 import { ReactComponent as SvgCheckoutPayment } from '@/assets/checkout-payment.svg'
@@ -9,7 +9,7 @@ import { ReactComponent as SvgPayMoney } from '@/assets/pay-money.svg'
 export const Payment = () => {
   return (
     <Container>
-      <DeliveryInfoTitle
+      <BoxTitle
         title="Pagamento"
         subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
         image={<SvgCheckoutPayment />}

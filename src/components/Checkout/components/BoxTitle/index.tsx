@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
 import { Container, Content, Subtitle, Title } from './styled'
 
-interface DeliveryInfoTitleProps {
+interface BoxTitleProps {
   title: string
   subtitle: string
   image: ReactNode
 }
 
-export const DeliveryInfoTitle = (props: DeliveryInfoTitleProps) => {
+export const BoxTitle = (props: BoxTitleProps) => {
   const { title, subtitle, image } = props
 
   return (
