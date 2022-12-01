@@ -13,9 +13,22 @@ export interface ProductsModel {
   [productKey: string]: ProductModel
 }
 
+export interface DeliveryModel {
+  cep: null | number
+  street: string
+  number: string
+  complemento: string
+  bairro: string
+  city: string
+}
+
+export type PaymentType = null | 'credit' | 'debit' | 'money'
+
 export interface ShopModel {
   cart: ProductsModel
   products: ProductsModel
+  delivery: DeliveryModel
+  payment: PaymentType
 }
 
 export interface ShopContextModel {

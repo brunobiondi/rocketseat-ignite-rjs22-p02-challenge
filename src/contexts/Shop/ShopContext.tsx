@@ -14,6 +14,15 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
   const initialState: ShopModel = {
     cart: getCart(),
     products: { ...listProducts, ...cartLocalStorage },
+    delivery: {
+      cep: null,
+      street: '',
+      number: '',
+      complemento: '',
+      bairro: '',
+      city: '',
+    },
+    payment: null,
   }
 
   const [{ cart, products }, dispatch] = useReducer(shopReducer, initialState)
