@@ -12,7 +12,7 @@ interface CardPurchaseProps {
 }
 
 export const ProductAmount = ({ product }: CardPurchaseProps) => {
-  const { cartAdd, cartRemove, oneMore, oneLess } = useContext(ShopContext)
+  const { cartRemove, oneMore, oneLess } = useContext(ShopContext)
 
   const { _productKey: productKey } = product
 
@@ -21,17 +21,17 @@ export const ProductAmount = ({ product }: CardPurchaseProps) => {
 
   const handleOneMore = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    isInCart ? oneMore(productKey) : cartAdd(productKey, 2)
+    oneMore(productKey)
   }
 
   const handleOneLess = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    if (isInCart) oneLess(productKey)
+    product.amount > 1 && oneLess(productKey)
   }
 
-  const handleToggleToCart = (e: MouseEvent<HTMLElement>) => {
+  const handleRemoveToCart = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    isInCart ? cartRemove(productKey) : cartAdd(productKey, 1)
+    cartRemove(productKey)
   }
 
   return (
@@ -46,7 +46,7 @@ export const ProductAmount = ({ product }: CardPurchaseProps) => {
         </a>
       </Amount>
 
-      <RemoveCart href="#" onClick={handleToggleToCart}>
+      <RemoveCart href="#" onClick={handleRemoveToCart}>
         <img src={svgRemove} alt="" />
         Remover
       </RemoveCart>
