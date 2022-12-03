@@ -41,6 +41,9 @@ export const PaymentMethod = styled.button<SelectPaymentMethod>`
   gap: 0.75rem;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.base.button};
+    background: ${(props) =>
+      props.selectPaymentMethod
+        ? props.theme.colors.base.button
+        : props.theme.colors.base.hover};
   }
 `
