@@ -21,3 +21,10 @@ export const ColumnUserInfo = styled(ColumnBase)`
 export const ColumnResumeOrder = styled(ColumnBase)`
   min-width: 28rem;
 `
+
+export const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.base.subtitle};
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.25rem;
+  font-weight: 800;
+`
