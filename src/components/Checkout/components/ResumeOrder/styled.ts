@@ -27,7 +27,12 @@ export const ButtonConfirmOrder = styled.button`
   align-items: center;
   justify-content: center;
 
-  &:hover {
+  &:disabled {
+    background: ${({ theme }) => theme.colors.base.button};
+    color: ${({ theme }) => theme.colors.base.hover};
+  }
+
+  &:not(:disabled):hover {
     background: ${({ theme }) => theme.colors.brand.yellowDark};
   }
 `
