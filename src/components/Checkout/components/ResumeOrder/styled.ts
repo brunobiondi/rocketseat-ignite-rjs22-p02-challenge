@@ -30,6 +30,7 @@ export const ButtonConfirmOrder = styled.button`
   &:disabled {
     background: ${({ theme }) => theme.colors.base.button};
     color: ${({ theme }) => theme.colors.base.hover};
+    cursor: not-allowed;
   }
 
   &:not(:disabled):hover {
