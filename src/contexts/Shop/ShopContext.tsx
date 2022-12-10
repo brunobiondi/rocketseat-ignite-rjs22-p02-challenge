@@ -15,7 +15,7 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
     cart: getCart(),
     products: { ...listProducts, ...cartLocalStorage },
     delivery: {
-      cep: null,
+      cep: '',
       street: '',
       number: '',
       complemento: '',
@@ -25,7 +25,10 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
     payment: null,
   }
 
-  const [{ cart, products }, dispatch] = useReducer(shopReducer, initialState)
+  const [{ cart, products, delivery, payment }, dispatch] = useReducer(
+    shopReducer,
+    initialState,
+  )
 
   const cartAdd = (productKey: string, amount: number) => {
     dispatch(actions.cartAdd(productKey, amount))
@@ -45,7 +48,16 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
 
   return (
     <ShopContext.Provider
-      value={{ cart, products, cartAdd, cartRemove, oneMore, oneLess }}
+      value={{
+        cart,
+        products,
+        delivery,
+        payment,
+        cartAdd,
+        cartRemove,
+        oneMore,
+        oneLess,
+      }}
     >
       {children}
     </ShopContext.Provider>

@@ -14,7 +14,7 @@ export interface ProductsModel {
 }
 
 export interface DeliveryModel {
-  cep: null | number
+  cep: '' | number
   street: string
   number: string
   complemento: string
@@ -22,19 +22,16 @@ export interface DeliveryModel {
   city: string
 }
 
-export type PaymentType = null | 'credit' | 'debit' | 'money'
+export type PaymentType = 'credit' | 'debit' | 'money'
 
 export interface ShopModel {
   cart: ProductsModel
   products: ProductsModel
   delivery: DeliveryModel
-  payment: PaymentType
+  payment: null | PaymentType
 }
 
-export interface ShopContextModel {
-  cart: ProductsModel
-  products: ProductsModel
-
+export interface ShopContextModel extends ShopModel {
   cartAdd: (productKey: string, amount: number) => void
   cartRemove: (productKey: string) => void
   oneMore: (productKey: string) => void
