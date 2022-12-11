@@ -10,28 +10,28 @@ export const shopReducer = (state: ShopModel, action: ActionModel) => {
   } = action
 
   switch (type) {
-    case ActionTypes.CART_ADD:
+    case ActionTypes.CART_ADD_ITEM:
       return produce(state, (draft) => {
         draft.products[productKey].amount = amount as number
         draft.cart[productKey] = draft.products[productKey]
         updateLocalStorage(draft.cart)
       })
 
-    case ActionTypes.CART_REMOVE:
+    case ActionTypes.CART_REMOVE_ITEM:
       return produce(state, (draft) => {
         draft.products[productKey].amount = 0
         delete draft.cart[productKey]
         updateLocalStorage(draft.cart)
       })
 
-    case ActionTypes.ONE_MORE:
+    case ActionTypes.CART_PRODUCT_MORE:
       return produce(state, (draft) => {
         draft.products[productKey].amount++
         draft.cart[productKey] = draft.products[productKey]
         updateLocalStorage(draft.cart)
       })
 
-    case ActionTypes.ONE_LESS:
+    case ActionTypes.CART_PRODUCT_LESS:
       return produce(state, (draft) => {
         draft.products[productKey].amount--
 
