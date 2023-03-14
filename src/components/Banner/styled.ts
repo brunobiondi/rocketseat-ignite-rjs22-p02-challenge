@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: block;
-`
+`;
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -12,11 +12,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 3.5rem;
-`
+`;
 
 export const BannerTexts = styled.div`
   max-width: 36.75rem;
-`
+`;
 
 export const Headline = styled.h1`
   color: ${({ theme }) => theme.colors.base.title};
@@ -25,7 +25,7 @@ export const Headline = styled.h1`
   font-weight: 800;
   line-height: 130%;
   margin-bottom: 1rem;
-`
+`;
 
 export const Subtitle = styled.h2`
   color: ${({ theme }) => theme.colors.base.subtitle};
@@ -33,7 +33,7 @@ export const Subtitle = styled.h2`
   font-weight: 400;
   line-height: 130%;
   margin-bottom: 4.125rem;
-`
+`;
 
 export const FeatureList = styled.ul`
   display: flex;
@@ -60,4 +60,4 @@ export const FeatureList = styled.ul`
   li:nth-of-type(odd) {
     max-width: 15rem;
   }
-`
+`;

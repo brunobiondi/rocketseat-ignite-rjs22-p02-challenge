@@ -1,5 +1,5 @@
-import { Banner } from '@/components/Banner'
-import { ListProducts } from '@/components/ListProducts'
+import { Banner } from '@/components/Banner';
+import { ListProducts } from '@/components/ListProducts';
 
 export const Home = () => {
   return (
@@ -7,5 +7,5 @@ export const Home = () => {
       <Banner />
       <ListProducts />
     </>
-  )
-}
+  );
+};

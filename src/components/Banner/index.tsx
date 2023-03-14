@@ -1,15 +1,15 @@
-import * as styled from './styled'
+import * as styled from './styled';
 
-import imgBanner from '@/assets/banner.png'
-import { ReactComponent as IconCartCircle } from '@/assets/cart-circle.svg'
-import { ReactComponent as IconCoffeeCircle } from '@/assets/coffee-circle.svg'
-import { ReactComponent as IconPackageCircle } from '@/assets/package-circle.svg'
-import { ReactComponent as IconTimerCircle } from '@/assets/timer-circle.svg'
+import imgBanner from '@/assets/banner.png';
+import { ReactComponent as IconCartCircle } from '@/assets/cart-circle.svg';
+import { ReactComponent as IconCoffeeCircle } from '@/assets/coffee-circle.svg';
+import { ReactComponent as IconPackageCircle } from '@/assets/package-circle.svg';
+import { ReactComponent as IconTimerCircle } from '@/assets/timer-circle.svg';
 
 export const Banner = () => {
   // * Important: This was necessary to avoid an infinite loop of "corrections" of the last comma of the import
-  const { Wrapper, Container, BannerTexts } = styled
-  const { Headline, Subtitle, FeatureList } = styled
+  const { Wrapper, Container, BannerTexts } = styled;
+  const { Headline, Subtitle, FeatureList } = styled;
 
   return (
     <Wrapper>
@@ -49,5 +49,5 @@ export const Banner = () => {
         <img src={imgBanner} alt="" />
       </Container>
     </Wrapper>
-  )
-}
+  );
+};

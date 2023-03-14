@@ -1,5 +1,5 @@
-import { Checkout as CheckoutContent } from '@/components/Checkout'
+import { Checkout as CheckoutContent } from '@/components/Checkout';
 
 export const Checkout = () => {
-  return <CheckoutContent />
-}
+  return <CheckoutContent />;
+};

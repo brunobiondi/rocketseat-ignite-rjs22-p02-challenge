@@ -1,5 +1,5 @@
-import { ProductModel } from '@/contexts/Shop/ShopModel'
-import { CardPurchase } from '../CardPurchase'
+import { ProductModel } from '@/contexts/Shop/ShopModel';
+import { CardPurchase } from '../CardPurchase';
 import {
   Description,
   Image,
@@ -8,14 +8,14 @@ import {
   Tag,
   TagsContainer,
   Title,
-} from './styled'
+} from './styled';
 
 interface ProductCardProps {
-  product: ProductModel
+  product: ProductModel;
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const isInCart = Boolean(product.amount)
+  const isInCart = Boolean(product.amount);
 
   return (
     <Item isInCart={isInCart}>
@@ -32,5 +32,5 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
       <CardPurchase product={product} />
     </Item>
-  )
-}
+  );
+};

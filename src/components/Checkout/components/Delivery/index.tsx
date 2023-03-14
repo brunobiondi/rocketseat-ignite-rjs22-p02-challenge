@@ -1,7 +1,14 @@
-import { BoxTitle } from '../BoxTitle'
-import { Container, FlexColumn, FlexRow, Form, Input, LabelObs } from './styled'
+import { BoxTitle } from '../BoxTitle';
+import {
+  Container,
+  FlexColumn,
+  FlexRow,
+  Form,
+  Input,
+  LabelObs,
+} from './styled';
 
-import { ReactComponent as SvgCheckoutLocation } from '@/assets/checkout-location.svg'
+import { ReactComponent as SvgCheckoutLocation } from '@/assets/checkout-location.svg';
 
 export const Delivery = () => {
   return (
@@ -47,5 +54,5 @@ export const Delivery = () => {
         </FlexRow>
       </Form>
     </Container>
-  )
-}
+  );
+};

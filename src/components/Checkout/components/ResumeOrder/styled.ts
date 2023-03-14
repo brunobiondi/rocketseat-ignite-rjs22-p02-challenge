@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
-  background: ${({ theme }) => theme.colors.base.card};}
+  background: ${({ theme }) => theme.colors.base.card};
   border-radius: 0.375rem 2.75rem;
   padding: 2.5rem;
-`
+`;
 
 export const ButtonConfirmOrder = styled.button`
   background: ${({ theme }) => theme.colors.brand.yellow};
@@ -36,4 +36,4 @@ export const ButtonConfirmOrder = styled.button`
   &:not(:disabled):hover {
     background: ${({ theme }) => theme.colors.brand.yellowDark};
   }
-`
+`;

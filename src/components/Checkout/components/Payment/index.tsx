@@ -1,10 +1,10 @@
-import { BoxTitle } from '../BoxTitle'
-import { Container, PaymentMethod, PaymentMethods } from './styled'
+import { BoxTitle } from '../BoxTitle';
+import { Container, PaymentMethod, PaymentMethods } from './styled';
 
-import { ReactComponent as SvgCheckoutPayment } from '@/assets/checkout-payment.svg'
-import { ReactComponent as SvgPayCredit } from '@/assets/pay-credit.svg'
-import { ReactComponent as SvgPayDebit } from '@/assets/pay-debit.svg'
-import { ReactComponent as SvgPayMoney } from '@/assets/pay-money.svg'
+import { ReactComponent as SvgCheckoutPayment } from '@/assets/checkout-payment.svg';
+import { ReactComponent as SvgPayCredit } from '@/assets/pay-credit.svg';
+import { ReactComponent as SvgPayDebit } from '@/assets/pay-debit.svg';
+import { ReactComponent as SvgPayMoney } from '@/assets/pay-money.svg';
 
 export const Payment = () => {
   return (
@@ -30,5 +30,5 @@ export const Payment = () => {
         </PaymentMethod>
       </PaymentMethods>
     </Container>
-  )
-}
+  );
+};

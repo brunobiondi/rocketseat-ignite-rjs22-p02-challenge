@@ -1,6 +1,6 @@
-import { ReactComponent as IconCart } from '@/assets/cart.svg'
-import { BadgeTotalProductsCart } from './BadgeTotalProductsCart'
-import { LinkCart } from './styled'
+import { ReactComponent as IconCart } from '@/assets/cart.svg';
+import { BadgeTotalProductsCart } from './BadgeTotalProductsCart';
+import { LinkCart } from './styled';
 
 export const Cart = () => {
   return (
@@ -8,5 +8,5 @@ export const Cart = () => {
       <BadgeTotalProductsCart />
       <IconCart />
     </LinkCart>
-  )
-}
+  );
+};

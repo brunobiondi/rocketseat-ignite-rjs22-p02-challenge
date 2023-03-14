@@ -1,3 +1,3 @@
 export interface IsInCartProps {
-  isInCart?: boolean
+  isInCart?: boolean;
 }

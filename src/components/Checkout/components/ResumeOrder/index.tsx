@@ -1,21 +1,21 @@
-import { ShopContext } from '@/contexts/Shop/ShopContext'
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ProductInCart } from './components/ProductInCart'
-import { ResumePayment } from './components/ResumePayment'
-import { ButtonConfirmOrder, Container } from './styled'
+import { ShopContext } from '@/contexts/Shop/ShopContext';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ProductInCart } from './components/ProductInCart';
+import { ResumePayment } from './components/ResumePayment';
+import { ButtonConfirmOrder, Container } from './styled';
 
 export const ResumeOrder = () => {
-  const { cart } = useContext(ShopContext)
+  const { cart } = useContext(ShopContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const productsInCart = Object.values(cart)
-  const isEmptyCart = productsInCart.length === 0
+  const productsInCart = Object.values(cart);
+  const isEmptyCart = productsInCart.length === 0;
 
   const handleCheckout = () => {
-    navigate('/success')
-  }
+    navigate('/success');
+  };
 
   return (
     <Container>
@@ -29,5 +29,5 @@ export const ResumeOrder = () => {
         Confirmar Pedido
       </ButtonConfirmOrder>
     </Container>
-  )
-}
+  );
+};

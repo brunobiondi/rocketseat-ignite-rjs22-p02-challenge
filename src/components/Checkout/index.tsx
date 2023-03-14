@@ -1,7 +1,7 @@
-import { Delivery } from './components/Delivery'
-import { Payment } from './components/Payment'
-import { ResumeOrder } from './components/ResumeOrder'
-import { ColumnResumeOrder, ColumnUserInfo, Container, Title } from './styled'
+import { Delivery } from './components/Delivery';
+import { Payment } from './components/Payment';
+import { ResumeOrder } from './components/ResumeOrder';
+import { ColumnResumeOrder, ColumnUserInfo, Container, Title } from './styled';
 
 export const Checkout = () => {
   return (
@@ -16,5 +16,5 @@ export const Checkout = () => {
         <ResumeOrder />
       </ColumnResumeOrder>
     </Container>
-  )
-}
+  );
+};

@@ -1,21 +1,21 @@
-import { ProductModel } from '@/contexts/Shop/ShopModel'
-import { ProductAmount } from '../ProductAmount'
-import { Container, Divider, Product, Title, TotalPrice } from './styled'
+import { ProductModel } from '@/contexts/Shop/ShopModel';
+import { ProductAmount } from '../ProductAmount';
+import { Container, Divider, Product, Title, TotalPrice } from './styled';
 
 interface ProductInCartProps {
-  product: ProductModel
+  product: ProductModel;
 }
 
 export const ProductInCart = ({ product }: ProductInCartProps) => {
-  const { name, price, amount, image } = product
+  const { name, price, amount, image } = product;
 
-  const total = price * amount
+  const total = price * amount;
 
   const priceBrl = new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
     currency: 'BRL',
     style: 'currency',
-  }).format(total)
+  }).format(total);
 
   return (
     <>
@@ -33,5 +33,5 @@ export const ProductInCart = ({ product }: ProductInCartProps) => {
       </Container>
       <Divider />
     </>
-  )
-}
+  );
+};
