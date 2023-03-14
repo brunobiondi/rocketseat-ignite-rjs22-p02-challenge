@@ -14,13 +14,13 @@ export interface ProductsModel {
 }
 
 export interface DeliveryModel {
-  cep: string | number;
+  cep: string;
   state: string;
   city: string;
   neighborhood: string;
   street: string;
-  number: string | number;
-  apartment_unit: string | number;
+  number: string;
+  apartment_unit: string;
 }
 
 export type PaymentType = 'credit' | 'debit' | 'money';
@@ -29,7 +29,7 @@ export interface ShopModel {
   cart: ProductsModel;
   products: ProductsModel;
   delivery: DeliveryModel;
-  payment: null | PaymentType;
+  payment: PaymentType;
 }
 
 export interface ShopContextModel extends ShopModel {
