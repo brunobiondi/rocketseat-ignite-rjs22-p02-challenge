@@ -6,11 +6,11 @@ export enum ActionTypes {
 }
 
 export interface ActionPayloads {
-  productKey: string;
-  amount?: number;
+  productKey: string
+  amount?: number
 }
 
 export interface ActionModel {
-  type: ActionTypes;
-  payload: ActionPayloads;
+  type: ActionTypes
+  payload: ActionPayloads
 }

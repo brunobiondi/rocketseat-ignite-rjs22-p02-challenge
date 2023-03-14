@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { IsInCartProps } from '../../IsInCartProps';
+import styled from 'styled-components'
+import { IsInCartProps } from '../../IsInCartProps'
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   gap: 0.5rem;
 
   padding: 0 0.25rem;
-`;
+`
 
 export const Price = styled.div`
   color: ${({ theme }) => theme.colors.base.text};
@@ -21,7 +21,7 @@ export const Price = styled.div`
   span {
     font-size: 0.875rem;
   }
-`;
+`
 
 export const Amount = styled.div`
   background: ${({ theme }) => theme.colors.base.button};
@@ -53,7 +53,7 @@ export const Amount = styled.div`
     align-items: center;
     justify-content: center;
   }
-`;
+`
 
 export const AddRemoveCart = styled.a<IsInCartProps>`
   background: ${(props) =>
@@ -76,4 +76,4 @@ export const AddRemoveCart = styled.a<IsInCartProps>`
         ? props.theme.colors.base.hover
         : props.theme.colors.brand.purple};
   }
-`;
+`

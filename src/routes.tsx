@@ -1,9 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
-import { Template } from './layout/Template';
+import { Route, Routes } from 'react-router-dom'
+import { Template } from './layout/Template'
 
-import { Checkout } from './pages/Checkout';
-import { Home } from './pages/Home';
-import { Success } from './pages/Success';
+import { Checkout } from './pages/Checkout'
+import { Home } from './pages/Home'
+import { Success } from './pages/Success'
 
 export const AppRoutes = () => {
   return (
@@ -14,5 +14,5 @@ export const AppRoutes = () => {
         <Route path="/success" element={<Success />} />
       </Route>
     </Routes>
-  );
-};
+  )
+}

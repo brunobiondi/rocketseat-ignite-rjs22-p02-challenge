@@ -21,4 +21,4 @@ export const theme = {
       yellowLight: '#f1e9c9',
     },
   },
-};
+}

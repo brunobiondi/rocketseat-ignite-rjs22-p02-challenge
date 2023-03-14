@@ -1,38 +1,38 @@
-import { ShopContext } from '@/contexts/Shop/ShopContext';
-import { ProductModel } from '@/contexts/Shop/ShopModel';
-import { MouseEvent, useContext } from 'react';
-import { Amount, Container, RemoveCart } from './styled';
+import { ShopContext } from '@/contexts/Shop/ShopContext'
+import { ProductModel } from '@/contexts/Shop/ShopModel'
+import { MouseEvent, useContext } from 'react'
+import { Amount, Container, RemoveCart } from './styled'
 
-import svgMinus from '@/assets/minus.svg';
-import svgMore from '@/assets/more.svg';
-import svgRemove from '@/assets/remove.svg';
+import svgMinus from '@/assets/minus.svg'
+import svgMore from '@/assets/more.svg'
+import svgRemove from '@/assets/remove.svg'
 
 interface CardPurchaseProps {
-  product: ProductModel;
+  product: ProductModel
 }
 
 export const ProductAmount = ({ product }: CardPurchaseProps) => {
-  const { cartRemove, oneMore, oneLess } = useContext(ShopContext);
+  const { cartRemove, oneMore, oneLess } = useContext(ShopContext)
 
-  const { _productKey: productKey } = product;
+  const { _productKey: productKey } = product
 
-  const isInCart = Boolean(product.amount);
-  const showAmount = isInCart ? product.amount : 1;
+  const isInCart = Boolean(product.amount)
+  const showAmount = isInCart ? product.amount : 1
 
   const handleOneMore = (e: MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    oneMore(productKey);
-  };
+    e.preventDefault()
+    oneMore(productKey)
+  }
 
   const handleOneLess = (e: MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    product.amount > 1 && oneLess(productKey);
-  };
+    e.preventDefault()
+    product.amount > 1 && oneLess(productKey)
+  }
 
   const handleRemoveToCart = (e: MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    cartRemove(productKey);
-  };
+    e.preventDefault()
+    cartRemove(productKey)
+  }
 
   return (
     <Container>
@@ -51,5 +51,5 @@ export const ProductAmount = ({ product }: CardPurchaseProps) => {
         Remover
       </RemoveCart>
     </Container>
-  );
-};
+  )
+}

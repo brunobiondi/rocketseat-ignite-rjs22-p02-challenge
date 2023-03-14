@@ -1,19 +1,19 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface SelectPaymentMethod {
-  selectPaymentMethod?: boolean;
+  selectPaymentMethod?: boolean
 }
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.base.card};
   border-radius: 0.375rem;
   padding: 2.5rem;
-`;
+`
 
 export const PaymentMethods = styled.div`
   display: flex;
   gap: 0.75rem;
-`;
+`
 
 export const PaymentMethod = styled.button<SelectPaymentMethod>`
   background: ${(props) =>
@@ -46,4 +46,4 @@ export const PaymentMethod = styled.button<SelectPaymentMethod>`
         ? props.theme.colors.base.button
         : props.theme.colors.base.hover};
   }
-`;
+`

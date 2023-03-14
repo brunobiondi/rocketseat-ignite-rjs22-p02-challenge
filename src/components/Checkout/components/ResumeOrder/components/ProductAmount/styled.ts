@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   gap: 0.5rem;
-`;
+`
 
 export const Amount = styled.div`
   background: ${({ theme }) => theme.colors.base.button};
@@ -37,7 +37,7 @@ export const Amount = styled.div`
     align-items: center;
     justify-content: center;
   }
-`;
+`
 
 export const RemoveCart = styled.a`
   background: ${(props) => props.theme.colors.base.button};
@@ -57,4 +57,4 @@ export const RemoveCart = styled.a`
   &:hover {
     background: ${(props) => props.theme.colors.base.hover};
   }
-`;
+`

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { IsInCartProps } from '../../IsInCartProps';
+import styled from 'styled-components'
+import { IsInCartProps } from '../../IsInCartProps'
 
-const isInCartBorderWidth = '5px';
+const isInCartBorderWidth = '5px'
 
 export const Item = styled.div<IsInCartProps>`
   background: ${({ theme }) => theme.colors.base.card};
@@ -11,24 +11,24 @@ export const Item = styled.div<IsInCartProps>`
   border-radius: 0.375rem 2.25rem;
   padding: 1.25rem calc(1.5rem - ${isInCartBorderWidth});
   transition: all 0.5s;
-`;
+`
 
 export const ProductInfo = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
+`
 
 export const Image = styled.img`
   margin: calc(-2.5rem - ${isInCartBorderWidth}) auto 0.75rem;
-`;
+`
 
 export const TagsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-`;
+`
 
 export const Tag = styled.span`
   background: ${({ theme }) => theme.colors.brand.yellowLight};
@@ -40,7 +40,7 @@ export const Tag = styled.span`
   margin-bottom: 1rem;
   padding: 0.25rem 0.5rem;
   text-transform: uppercase;
-`;
+`
 
 export const Title = styled.h4`
   color: ${({ theme }) => theme.colors.base.subtitle};
@@ -50,7 +50,7 @@ export const Title = styled.h4`
   line-height: 130%;
   margin-bottom: 0.5rem;
   text-align: center;
-`;
+`
 
 export const Description = styled.p`
   color: ${({ theme }) => theme.colors.base.label};
@@ -58,4 +58,4 @@ export const Description = styled.p`
   line-height: 130%;
   margin-bottom: 2rem;
   text-align: center;
-`;
+`

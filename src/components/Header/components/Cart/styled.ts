@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const LinkCart = styled(Link)`
   background: ${({ theme }) => theme.colors.brand.yellowLight};
@@ -9,7 +9,7 @@ export const LinkCart = styled(Link)`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-`;
+`
 
 export const TotalProductsCart = styled.span`
   background: ${({ theme }) => theme.colors.brand.yellowDark};
@@ -28,4 +28,4 @@ export const TotalProductsCart = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const LinkCity = styled.a`
   background: ${({ theme }) => theme.colors.brand.purpleLight};
@@ -9,4 +9,4 @@ export const LinkCity = styled.a`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-`;
+`

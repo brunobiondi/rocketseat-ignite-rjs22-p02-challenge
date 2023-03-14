@@ -1,5 +1,5 @@
-import { ReactComponent as IconLocation } from '@/assets/location.svg';
-import { LinkCity } from './styled';
+import { ReactComponent as IconLocation } from '@/assets/location.svg'
+import { LinkCity } from './styled'
 
 export const City = () => {
   return (
@@ -7,5 +7,5 @@ export const City = () => {
       <IconLocation />
       Porto Alegre, RS
     </LinkCity>
-  );
-};
+  )
+}

@@ -1,14 +1,14 @@
-import { ReactNode } from 'react';
-import { Container, Content, Subtitle, Title } from './styled';
+import { ReactNode } from 'react'
+import { Container, Content, Subtitle, Title } from './styled'
 
 interface BoxTitleProps {
-  title: string;
-  subtitle: string;
-  image: ReactNode;
+  title: string
+  subtitle: string
+  image: ReactNode
 }
 
 export const BoxTitle = (props: BoxTitleProps) => {
-  const { title, subtitle, image } = props;
+  const { title, subtitle, image } = props
 
   return (
     <Container>
@@ -18,5 +18,5 @@ export const BoxTitle = (props: BoxTitleProps) => {
         <Subtitle>{subtitle}</Subtitle>
       </Content>
     </Container>
-  );
-};
+  )
+}
