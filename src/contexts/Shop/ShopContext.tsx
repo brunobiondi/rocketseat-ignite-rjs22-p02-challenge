@@ -2,7 +2,12 @@ import { createContext, PropsWithChildren, useReducer } from 'react'
 import { getCart, getDelivery, getPayment } from './cartLocalStorage'
 import * as actions from './reducer/actions'
 import { shopReducer } from './reducer/reducer'
-import { ShopContextModel, ShopModel } from './ShopModel'
+import {
+  DeliveryModel,
+  PaymentType,
+  ShopContextModel,
+  ShopModel,
+} from './ShopModel'
 import * as defaultState from './ShopDefaultState'
 
 export const ShopContext = createContext<ShopContextModel>(
@@ -38,6 +43,14 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
     dispatch(actions.oneLess(productKey))
   }
 
+  const setDelivery = (delivery: DeliveryModel) => {
+    dispatch(actions.deliverySetFields(delivery))
+  }
+
+  const setPayment = (payment: PaymentType) => {
+    dispatch(actions.paymentSetMethod(payment))
+  }
+
   return (
     <ShopContext.Provider
       value={{
@@ -49,6 +62,8 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
         cartRemove,
         oneMore,
         oneLess,
+        setDelivery,
+        setPayment,
       }}
     >
       {children}

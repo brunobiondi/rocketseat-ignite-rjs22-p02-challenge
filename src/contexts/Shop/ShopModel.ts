@@ -37,4 +37,6 @@ export interface ShopContextModel extends ShopModel {
   cartRemove: (productKey: string) => void
   oneMore: (productKey: string) => void
   oneLess: (productKey: string) => void
+  setDelivery: (fields: DeliveryModel) => void
+  setPayment: (method: PaymentType) => void
 }
