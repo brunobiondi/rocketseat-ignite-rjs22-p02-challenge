@@ -1,17 +1,12 @@
-import { createContext, PropsWithChildren, useReducer } from 'react'
+import { createContext, PropsWithChildren, ReducerState, useReducer } from 'react'
 import { getCart, getDelivery, getPayment } from './cartLocalStorage'
 import * as actions from './reducer/actions'
 import { shopReducer } from './reducer/reducer'
-import {
-  DeliveryModel,
-  PaymentType,
-  ShopContextModel,
-  ShopModel,
-} from './ShopModel'
+import { DeliveryModel, PaymentType, ShopContextModel, ShopModel } from './ShopModel'
 import * as defaultState from './ShopDefaultState'
 
 export const ShopContext = createContext<ShopContextModel>(
-  {} as ShopContextModel
+  {} as ShopContextModel,
 )
 
 export const ShopContextProvider = ({ children }: PropsWithChildren) => {
@@ -24,7 +19,7 @@ export const ShopContextProvider = ({ children }: PropsWithChildren) => {
 
   const [{ cart, products, delivery, payment }, dispatch] = useReducer(
     shopReducer,
-    initialState
+    initialState as ReducerState<ShopModel>,
   )
 
   const cartAdd = (productKey: string, amount: number) => {
