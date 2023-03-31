@@ -5,6 +5,7 @@ import { ChangeEvent, useContext, useState } from 'react'
 import { ShopContext } from '@/contexts/Shop/ShopContext'
 import { api } from '@/services/api'
 import { DeliveryModel } from '@/contexts/Shop/ShopModel'
+import { Loading } from '@/components/Loading'
 
 export const Delivery = () => {
   const { delivery, setDelivery } = useContext(ShopContext)
@@ -42,6 +43,10 @@ export const Delivery = () => {
     }
   }
 
+  const saveDeliveryOnChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    setDelivery({ ...delivery, [target.name]: target.value })
+  }
+
   return (
     <Container>
       <BoxTitle
@@ -58,52 +63,70 @@ export const Delivery = () => {
               placeholder="CEP"
             />
           </FlexColumn>
-          <FlexColumn flex={2}></FlexColumn>
+          <FlexColumn flex={2}>
+            {isLoading && <Loading>Buscando CEP</Loading>}
+          </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn>
             <Input
+              name="street"
               placeholder="Rua"
               key={delivery.street}
               defaultValue={delivery.street}
+              onChange={saveDeliveryOnChange}
             />
           </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn flex={1}>
-            <Input placeholder="Número" />
+            <Input
+              name="number"
+              placeholder="Número"
+              key={delivery.number}
+              defaultValue={delivery.number}
+              onChange={saveDeliveryOnChange}
+            />
           </FlexColumn>
           <FlexColumn flex={2}>
             <LabelObs htmlFor="complement">Opcional</LabelObs>
             <Input
+              name="apartment_unit"
               key={delivery.apartment_unit}
               defaultValue={delivery.apartment_unit}
               placeholder="Complemento"
               paddingRight="4.5rem"
+              onChange={saveDeliveryOnChange}
             />
           </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn flex={1}>
             <Input
+              name="neighborhood"
               key={delivery.neighborhood}
               defaultValue={delivery.neighborhood}
               placeholder="Bairro"
+              onChange={saveDeliveryOnChange}
             />
           </FlexColumn>
           <FlexColumn flex={2}>
             <FlexColumn flex={4}>
               <Input
+                name="city"
                 key={delivery.city}
                 defaultValue={delivery.city}
                 placeholder="Cidade"
+                onChange={saveDeliveryOnChange}
               />
             </FlexColumn>
             <FlexColumn flex={1}>
               <Input
+                name="state"
                 key={delivery.state}
                 defaultValue={delivery.state}
                 placeholder="UF"
+                onChange={saveDeliveryOnChange}
               />
             </FlexColumn>
           </FlexColumn>
