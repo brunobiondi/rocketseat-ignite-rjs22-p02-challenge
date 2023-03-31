@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.base.card};
@@ -6,10 +6,23 @@ export const Container = styled.div`
   padding: 2.5rem;
 `
 
-export const Form = styled.form`
+interface FormProps {
+  isLoading: boolean
+}
+
+export const Form = styled.form<FormProps>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  transition: all 0.2s;
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      opacity: 0.5;
+      pointer-events: none;
+    `}
 `
 
 export const FlexRow = styled.div`
@@ -27,9 +40,7 @@ export const FlexColumn = styled.div<{ flex?: number }>`
   position: relative;
 `
 
-export const Input = styled.input.attrs({
-  type: 'text',
-})<{ paddingRight?: string }>`
+export const Input = styled.input<{ paddingRight?: string }>`
   background: ${({ theme }) => theme.colors.base.input};
   border: 1px solid ${({ theme }) => theme.colors.base.button};
   border-radius: 0.25rem;
