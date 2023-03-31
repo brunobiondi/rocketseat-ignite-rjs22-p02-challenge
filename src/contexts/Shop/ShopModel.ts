@@ -14,7 +14,7 @@ export interface ProductsModel {
 }
 
 export interface DeliveryModel {
-  cep: string
+  postalCode: string
   state: string
   city: string
   neighborhood: string

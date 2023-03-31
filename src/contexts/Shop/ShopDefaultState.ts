@@ -10,7 +10,7 @@ export { products }
 export const cart: ProductsModel = {}
 
 export const delivery: DeliveryModel = {
-  cep: '90010020',
+  postalCode: '90010020',
   state: 'RS',
   city: 'Porto Alegre',
   neighborhood: 'Centro Histórico',
