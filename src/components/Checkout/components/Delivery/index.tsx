@@ -8,7 +8,6 @@ import { DeliveryModel } from '@/contexts/Shop/ShopModel'
 
 export const Delivery = () => {
   const { delivery, setDelivery } = useContext(ShopContext)
-  console.log({ delivery })
 
   const [postalCode, setPostalCode] = useState(`${delivery.postalCode}`)
   const [lastPostalCode, setLastPostalCode] = useState(`${delivery.postalCode}`)
