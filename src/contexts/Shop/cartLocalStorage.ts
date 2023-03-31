@@ -20,7 +20,7 @@ export const getLocalStorage = (): ShopModel => {
   if (isNull || isDiff) {
     localStorage.setItem(
       VITE_LOCALSTORAGE_CART_KEY_VERSION,
-      VITE_LOCALSTORAGE_CART_VERSION
+      VITE_LOCALSTORAGE_CART_VERSION,
     )
     localStorage.setItem(
       VITE_LOCALSTORAGE_CART_KEY_DATA,
@@ -28,7 +28,7 @@ export const getLocalStorage = (): ShopModel => {
         cart: defaultState.cart,
         delivery: defaultState.delivery,
         payment: defaultState.payment,
-      })
+      }),
     )
   }
 
@@ -40,7 +40,7 @@ export const setLocalStorage = (shop: ShopModel) => {
   const { cart, delivery, payment } = shop
   localStorage.setItem(
     VITE_LOCALSTORAGE_CART_KEY_DATA,
-    JSON.stringify({ cart, delivery, payment })
+    JSON.stringify({ cart, delivery, payment }),
   )
 }
 
