@@ -49,12 +49,14 @@ export const shopReducer = (state: ShopModel, action: ActionModel) => {
   if (type === ActionTypes.DELIVERY_SET_FIELDS) {
     return produce(state, (draft) => {
       draft.delivery = { ...payload }
+      updateLocalStorage(draft)
     })
   }
 
   if (type === ActionTypes.PAYMENT_SET_METHOD) {
     return produce(state, (draft) => {
       draft.payment = payload
+      updateLocalStorage(draft)
     })
   }
 
